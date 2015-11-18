@@ -1,17 +1,13 @@
-module.exports = function(grunt) {
-    var files = [
-        'gruntfile.js',
-        'lib/*.js',
-        'tasks/*.js',
-        'test/**/*.js'
-    ];
+var path = require('path')
 
+module.exports = function (grunt) {
     grunt.initConfig({
         pkgFile: 'package.json',
         clean: ['build'],
         babel: {
             options: {
-                sourceMap: false
+                sourceMap: false,
+                optional: ['runtime']
             },
             dist: {
                 files: [{
@@ -23,11 +19,24 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        mocha_istanbul: {
+            coverage: {
+                src: ['test/*.js'],
+                options: {
+                    reporter: 'spec',
+                    require: [
+                        'should',
+                        './test/bootstrap'
+                    ],
+                    scriptPath: path.join(__dirname, 'node_modules', 'babel-istanbul', 'lib', 'cli')
+                }
+            }
+        },
         eslint: {
             options: {
                 parser: 'babel-eslint'
             },
-            target: ['lib/adapter.js']
+            target: ['lib/reporter.js']
         },
         contributors: {
             options: {
@@ -39,23 +48,28 @@ module.exports = function(grunt) {
                 commitMessage: 'v%VERSION%',
                 pushTo: 'upstream'
             }
+        },
+        watch: {
+            dist: {
+                files: './lib/**/*.js',
+                tasks: ['babel:dist']
+            }
         }
-    });
+    })
 
-    require('load-grunt-tasks')(grunt);
-    grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', 'Build wdio-junit-reporter', function() {
+    require('load-grunt-tasks')(grunt)
+    grunt.registerTask('default', ['eslint', 'build', 'mocha_istanbul'])
+    grunt.registerTask('build', 'Build wdio-dot-reporter', function () {
         grunt.task.run([
-            'eslint',
             'clean',
             'babel'
-        ]);
-    });
-    grunt.registerTask('release', 'Bump and tag version', function(type) {
+        ])
+    })
+    grunt.registerTask('release', 'Bump and tag version', function (type) {
         grunt.task.run([
             'build',
             'contributors',
             'bump:' + (type || 'patch')
-        ]);
-    });
-};
+        ])
+    })
+}
