@@ -27,7 +27,9 @@
     "url": "https://github.com/webdriverio/wdio-junit-reporter/issues"
   },
   "homepage": "https://github.com/webdriverio/wdio-junit-reporter#readme",
-  "dependencies": {},
+  "dependencies": {
+    "junit-report-builder": "^1.0.0"
+  },
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
