@@ -59,7 +59,7 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt)
     grunt.registerTask('default', ['eslint', 'build', 'mocha_istanbul'])
-    grunt.registerTask('build', 'Build wdio-dot-reporter', function () {
+    grunt.registerTask('build', 'Build wdio-junit-reporter', function () {
         grunt.task.run([
             'clean',
             'babel'
