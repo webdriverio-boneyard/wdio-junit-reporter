@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/webdriverio/wdio-junit-reporter#readme",
   "dependencies": {
-    "junit-report-builder": "^1.1.1"
+    "junit-report-builder": "^1.1.1",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
