@@ -36,7 +36,8 @@ module.exports = {
   // ...
   reporters: ['dot', 'junit'],
   reporterOptions: {
-    outputDir: './'
+    outputDir: './',
+    outputFileFormat: 'results-{cid}.{capabilities}.xml' // optional
   },
   // ...
 };
