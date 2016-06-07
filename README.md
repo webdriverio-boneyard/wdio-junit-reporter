@@ -36,7 +36,10 @@ module.exports = {
   // ...
   reporters: ['dot', 'junit'],
   reporterOptions: {
-    outputDir: './'
+    outputDir: './',
+    outputFileFormat: function(opts) { // optional
+        return `results-${opts.cid}.${opts.capabilities}.xml`
+    }
   },
   // ...
 };
