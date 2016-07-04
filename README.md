@@ -38,7 +38,7 @@ module.exports = {
   reporterOptions: {
     outputDir: './',
     outputFileFormat: function(opts) { // optional
-        return `results-${opts.cid}.${opts.capabilities}.xml`
+        return `results-${opts.cid}.${opts.capabilities}.${opts.config.suite}.xml`
     }
   },
   // ...
