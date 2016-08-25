@@ -37,9 +37,10 @@ module.exports = {
   reporters: ['dot', 'junit'],
   reporterOptions: {
     outputDir: './',
-    outputFileFormat: function(opts) { // optional
+    outputFileFormat: function(opts) { // optional... will default to 'WDIO.xunit${capabilities.sanitizedCapabilities}.${cid}.xml'
         return `results-${opts.cid}.${opts.capabilities}.xml`
-    }
+    },
+    suiteNameFormat: /[^a-z]+/ // optional... will default to /[^a-z0-9]+/
   },
   // ...
 };
