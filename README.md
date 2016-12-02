@@ -44,6 +44,20 @@ module.exports = {
   // ...
 };
 ```
+You can break out packages by an additional level by setting `'packageName'` in the config. For example, if you wanted to iterate over a test suite with different environemnt variable set:
+
+```js
+  // ...
+  reporters: ['dot', 'junit'],
+  reporterOptions: {
+    showDiff: true,
+    outputDir: './',
+    packageName: process.env.USER_ROLE // chrome.41 - administrator
+  }
+  // ...
+```
+
+
 
 Last but not least you nead to tell your CI job (e.g. Jenkins) where it can find the xml file. To do that add a post-build action to your job that gets executed after the test has run and point Jenkins (or your desired CI system) to your XML test results:
 
