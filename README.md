@@ -44,8 +44,7 @@ module.exports = {
   // ...
 };
 ```
-
-To manually set the package name for publishing more elaborate Jenkins reports (instead of browser + version), just add a `'packageName'`:
+You can break out packages by an additional level by setting `'packageName'` in the config. For example, if you wanted to iterate over a test suite with different environemnt variable set:
 
 ```js
   // ...
@@ -53,7 +52,7 @@ To manually set the package name for publishing more elaborate Jenkins reports (
   reporterOptions: {
     showDiff: true,
       outputDir: './',
-      packageName: `${customPackageName}`
+      packageName: process.env.USER_ROLE // chrome.41 - administrator
   }
   // ...
 ```
