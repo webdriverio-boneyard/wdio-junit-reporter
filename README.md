@@ -45,6 +45,21 @@ module.exports = {
 };
 ```
 
+To manually set the package name for publishing more elaborate Jenkins reports (instead of browser + version), just add a `'packageName'`:
+
+```js
+  // ...
+  reporters: ['dot', 'junit'],
+  reporterOptions: {
+    showDiff: true,
+      outputDir: './',
+      packageName: `${customPackageName}`
+  }
+  // ...
+```
+
+
+
 Last but not least you nead to tell your CI job (e.g. Jenkins) where it can find the xml file. To do that add a post-build action to your job that gets executed after the test has run and point Jenkins (or your desired CI system) to your XML test results:
 
 ![Point Jenkins to XML files](http://webdriver.io/images/jenkins-postjob.png "Point Jenkins to XML files")
