@@ -51,8 +51,8 @@ You can break out packages by an additional level by setting `'packageName'` in 
   reporters: ['dot', 'junit'],
   reporterOptions: {
     showDiff: true,
-      outputDir: './',
-      packageName: process.env.USER_ROLE // chrome.41 - administrator
+    outputDir: './',
+    packageName: process.env.USER_ROLE // chrome.41 - administrator
   }
   // ...
 ```
