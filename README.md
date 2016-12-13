@@ -44,7 +44,7 @@ module.exports = {
   // ...
 };
 ```
-You can break out packages by an additional level by setting `'packageName'` in the config. For example, if you wanted to iterate over a test suite with different environemnt variable set:
+You can break out packages by an additional level by setting `'packageName'` in the config. For example, if you wanted to iterate over a test suite with different environment variable set:
 
 ```js
   // ...
