@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/webdriverio/wdio-junit-reporter#readme",
   "dependencies": {
-    "junit-report-builder": "^1.1.1",
+    "junit-report-builder": "^1.2.0",
     "babel-runtime": "^5.8.25",
     "mkdirp": "^0.5.1"
   },
