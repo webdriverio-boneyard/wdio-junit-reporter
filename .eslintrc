@@ -2,11 +2,6 @@
   "extends": "standard",
   "rules": {
     "indent": [2, 4],
-    "max-lines": [2, {
-      max: 300,
-      skipBlankLines: true,
-      skipComments: true
-    }],
     "max-len": [2, 100, 4, {
       ignoreComments: true,
       ignoreUrls: true,
