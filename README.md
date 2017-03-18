@@ -1,6 +1,10 @@
 WDIO JUnit Reporter
 ===================
 
+[![Build Status](https://travis-ci.org/webdriverio/wdio-junit-reporter.svg?branch=master)](https://travis-ci.org/webdriverio/wdio-junit-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/coverage) [![dependencies Status](https://david-dm.org/webdriverio/wdio-junit-reporter/status.svg)](https://david-dm.org/webdriverio/wdio-junit-reporter)
+
+***
+
 > A WebdriverIO plugin. Report results in junit xml format.
 
 ![WDIO JUnit Reporter](http://webdriver.io/images/jenkins-final.png "Dot Reporter")
@@ -12,7 +16,7 @@ The easiest way is to keep `wdio-junit-reporter` as a devDependency in your `pac
 ```json
 {
   "devDependencies": {
-    "wdio-junit-reporter": "~0.0.1"
+    "wdio-junit-reporter": "~0.3.0"
   }
 }
 ```
@@ -57,13 +61,36 @@ You can break out packages by an additional level by setting `'packageName'` in 
   // ...
 ```
 
-
-
 Last but not least you nead to tell your CI job (e.g. Jenkins) where it can find the xml file. To do that add a post-build action to your job that gets executed after the test has run and point Jenkins (or your desired CI system) to your XML test results:
 
 ![Point Jenkins to XML files](http://webdriver.io/images/jenkins-postjob.png "Point Jenkins to XML files")
 
 If there is no such post-build step in your CI system there is probably a plugin for that somewhere on the internet.
+
+## Development
+
+All commands can be found in the package.json. The most important are:
+
+Watch changes:
+
+```sh
+$ npm run watch
+```
+
+Run tests:
+
+```sh
+$ npm test
+
+# run test with coverage report:
+$ npm run test:cover
+```
+
+Build package:
+
+```sh
+$ npm build
+```
 
 ----
 
