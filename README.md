@@ -63,7 +63,7 @@ Required
 Define the format of your xml files using an `opts` parameter that contains the runner id as well
 as the capabilities of the runner.
 
-Type: `Function`<b>
+Type: `Function`<br>
 Default:
 
 ```js
@@ -74,9 +74,9 @@ outputFileFormat: function(opts) { // optional
 
 ### suiteNameFormat
 
-Gives the ability to provide custom regex for formatting test suite name (e.g. ) in output xml.
+Gives the ability to provide custom regex for formatting test suite name (e.g. in output xml ).
 
-Type: `Regex`,
+Type: `Regex`,<br>
 Default: `/[^a-z0-9]+/`
 
 ### packageName
