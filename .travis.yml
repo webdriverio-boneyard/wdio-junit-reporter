@@ -2,7 +2,7 @@ language: node_js
 bundler_args: --retry 0
 
 node_js:
-  - '6.10'
+  - '5.10.1'
 
 script:
   - npm run test:ci
