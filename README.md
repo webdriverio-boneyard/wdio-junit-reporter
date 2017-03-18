@@ -41,8 +41,9 @@ module.exports = {
   reporters: ['dot', 'junit'],
   reporterOptions: {
     outputDir: './',
-    outputFileFormat: function(opts) { // optional
-        return `results-${opts.cid}.${opts.capabilities}.xml`
+    outputFileFormat: function(opts) {
+      var suiteName = opts.config.suite.replace(/([^a-z0-9]+)/gi, '-');
+      return `results-${opts.cid}.${opts.capabilities}.${suiteName}.xml`;
     }
   },
   // ...
