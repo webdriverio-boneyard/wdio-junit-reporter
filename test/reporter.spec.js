@@ -78,6 +78,15 @@ COMMAND: POST /path/to/command - "some payload"
       <property name="capabilities" value="phantomjs"/>
       <property name="file" value="/path/to/file.spec.js"/>
     </properties>`)
+
+                xml1Content.should.containEql(
+`<system-err>
+        <![CDATA[
+some error stack
+with new line
+]]>
+      </system-err>`
+                )
             })
         })
     })
