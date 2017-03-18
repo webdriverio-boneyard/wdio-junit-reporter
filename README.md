@@ -68,7 +68,7 @@ Default:
 
 ```js
 outputFileFormat: function(opts) { // optional
-    return `WDIO.xunit${opts.capabilities}.${cid}.xml`
+    return `WDIO.xunit.${opts.capabilities}.${cid}.xml`
 }
 ```
 
