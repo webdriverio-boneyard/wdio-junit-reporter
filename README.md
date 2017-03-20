@@ -1,6 +1,8 @@
 WDIO JUnit Reporter
 ===================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/webdriverio/wdio-junit-reporter.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/webdriverio/wdio-junit-reporter.svg?branch=master)](https://travis-ci.org/webdriverio/wdio-junit-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/coverage) [![dependencies Status](https://david-dm.org/webdriverio/wdio-junit-reporter/status.svg)](https://david-dm.org/webdriverio/wdio-junit-reporter)
 
 ***
