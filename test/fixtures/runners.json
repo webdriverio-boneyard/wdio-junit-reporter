@@ -251,6 +251,20 @@
                       "body": "some body"
                     }
                   }]
+                },
+                "really last8": {
+                  "uid": "really last8",
+                  "state": "skipped",
+                  "duration": 1000,
+                  "output": [{
+                    "type": "command",
+                    "payload": {
+                      "method": "POST",
+                      "uri": { "href": "/path/to/command" },
+                      "data": "some payload",
+                      "body": "some body"
+                    }
+                  }]
                 }
               }
             }
