@@ -260,7 +260,7 @@
                     "type": "command",
                     "payload": {
                       "method": "POST",
-                      "uri": { "href": "/path/to/command" },
+                      "uri": { "href": "/path/to/skipped" },
                       "data": "some payload",
                       "body": "some body"
                     }

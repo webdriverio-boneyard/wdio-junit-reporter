@@ -56,6 +56,11 @@ describe('junit reporter', () => {
                 xmlDoc2.errors.should.have.length(0)
             })
 
+            it('should have content for skipped test', () => {
+                xml2Content.should.containEql(
+`    <testcase classname="phantomjs.some_special_spec_title" name="skipped_test" time="1">`)
+            })
+
             it('should have expected content', () => {
                 xml1Content.should.containEql(
                     '<property name="file" value="/path/to/file.spec.js"/>'
