@@ -5,6 +5,7 @@ import libxml from 'libxmljs'
 
 import JunitReporter from '../lib/reporter'
 import runnersFixture from './fixtures/runners.json'
+import cucumberRunnerFixture from './fixtures/cucumberRunner.json'
 
 let reporter = null
 const outputDir = path.join(__dirname, 'tmp')
@@ -166,6 +167,28 @@ with new line
 
         it('should have package name in classname', () => {
             xml1Content.should.containEql('classname="phantomjs-____O.o____.some_foobar_test"')
+        })
+    })
+
+    describe('cucumber tests', () => {
+        before(() => {
+            const baseReporterCucumber = {
+                stats: cucumberRunnerFixture,
+                limit: (text) => text,
+                epilogue: () => {}
+            }
+
+            reporter = new JunitReporter(baseReporterCucumber, {}, { outputDir })
+        })
+
+        after(() => {
+            rimraf.sync(outputDir)
+        })
+
+        it('should not crash when fed by cucumber', () => {
+            reporter.onEnd()
+            const files = fs.readdirSync(outputDir)
+            files.should.have.lengthOf(1)
         })
     })
 })
