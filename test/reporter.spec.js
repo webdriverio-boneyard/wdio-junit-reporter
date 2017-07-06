@@ -1,5 +1,3 @@
-/* eslint-disable indent */
-
 import fs from 'fs'
 import path from 'path'
 import rimraf from 'rimraf'
@@ -60,6 +58,7 @@ describe('junit reporter', () => {
 
             it('should have content for skipped test', () => {
                 xml2Content.should.containEql(
+                // eslint-disable-next-line
 `    <testcase classname="phantomjs.some_special_spec_title" name="skipped_test" time="1">`)
             })
 
@@ -71,6 +70,7 @@ describe('junit reporter', () => {
                     '<property name="file" value="/path/to/file2.spec.js"/>'
                 )
                 xml1Content.should.containEql(
+                // eslint-disable-next-line
 `    <testcase classname="phantomjs.some_other_foobar_test" name="that_is_a_test" time="1">
       <system-out>
         <![CDATA[
@@ -79,6 +79,7 @@ COMMAND: POST /path/to/command - "some payload"
       </system-out>
     </testcase>`)
                 xml1Content.should.containEql(
+                // eslint-disable-next-line
 `    <properties>
       <property name="specId" value="12345"/>
       <property name="suiteName" value="some other foobar test"/>
@@ -87,6 +88,7 @@ COMMAND: POST /path/to/command - "some payload"
     </properties>`)
 
                 xml1Content.should.containEql(
+                // eslint-disable-next-line
 `<system-err>
         <![CDATA[
 some error stack
