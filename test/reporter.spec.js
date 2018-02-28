@@ -170,6 +170,40 @@ with new line
         })
     })
 
+    describe('errorOptions', () => {
+        let xml1Content = null
+
+        before(() => {
+            reporter = new JunitReporter(baseReporter, {}, {
+                outputDir,
+                errorOptions: {
+                    error: 'message',
+                    failure: 'message',
+                    stacktrace: 'stack'
+                }
+            })
+            reporter.onEnd()
+
+            const files = fs.readdirSync(outputDir)
+            xml1Content = fs.readFileSync(path.join(outputDir, files[0]), 'utf8')
+        })
+
+        after(() => {
+            rimraf.sync(outputDir)
+        })
+
+        it('should have package name in classname', () => {
+            xml1Content.should.containEql(
+                // eslint-disable-next-line
+                `<failure message="some error message">
+        <![CDATA[some error stack
+with new line]]>
+      </failure>
+      <error message="some error message"/>`
+            )
+        })
+    })
+
     describe('cucumber tests', () => {
         before(() => {
             const baseReporterCucumber = {

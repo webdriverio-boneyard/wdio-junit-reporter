@@ -101,6 +101,33 @@ module.exports = {
 };
 ```
 
+### errorOptions
+
+Allows to set various combinations of error notifications inside xml.
+
+Type: `Object`,<br>
+Default: `errorOptions: { error: "message" }`<br>
+Example:
+
+```js
+// wdio.conf.js
+module.exports = {
+    // ...
+    reporters: ['dot', 'junit'],
+    reporterOptions: {
+        junit: {
+            outputDir: './',
+            errorOptions: {
+                            error: 'message',
+                            failure: 'message',
+                            stacktrace: 'stack'
+                          }
+        }
+    }
+    // ...
+};
+```
+
 ## Jenkins Setup
 
 Last but not least you nead to tell your CI job (e.g. Jenkins) where it can find the xml file. To do that add a post-build action to your job that gets executed after the test has run and point Jenkins (or your desired CI system) to your XML test results:
