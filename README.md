@@ -103,8 +103,22 @@ module.exports = {
 
 ### errorOptions
 
-Allows to set various combinations of error notifications inside xml.
+Allows to set various combinations of error notifications inside xml.<br>
+Given a Jasmine test like `expect(true).toBe(false, 'my custom message')` you will get this test error:
 
+```
+{ 
+    matcherName: 'toBe',
+    message: 'Expected true to be false, \'my custom message\'.',
+    stack: 'Error: Expected true to be false, \'my custom message\'.\n    at UserContext.it (/home/mcelotti/Workspace/WebstormProjects/forcebeatwio/test/marco/prova1.spec.js:3:22)',
+    passed: false,
+    expected: [ false, 'my custom message' ],
+    actual: true 
+}
+```
+
+Therefore you can choose *which* key will be used *where*, see the example below.
+ 
 Type: `Object`,<br>
 Default: `errorOptions: { error: "message" }`<br>
 Example:
@@ -118,10 +132,10 @@ module.exports = {
         junit: {
             outputDir: './',
             errorOptions: {
-                            error: 'message',
-                            failure: 'message',
-                            stacktrace: 'stack'
-                          }
+                error: 'message',
+                failure: 'message',
+                stacktrace: 'stack'
+            }
         }
     }
     // ...
