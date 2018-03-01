@@ -104,11 +104,15 @@ with new line
     describe('outputFileFormat', () => {
         let xml1 = null
         let xml2 = null
+        let xml3 = null
 
         before(() => {
             reporter = new JunitReporter(baseReporter, {}, {
                 outputDir,
-                outputFileFormat: (opts) => `some-file-${opts.cid}.xml`
+                outputFileFormat: {
+                    single: (config) => `all.xml`,
+                    multi: (opts) => `some-file-${opts.cid}.xml`
+                }
             })
             reporter.onEnd()
         })
@@ -118,9 +122,10 @@ with new line
         })
 
         it('should have used expected file name format', () => {
-            [ xml1, xml2 ] = fs.readdirSync(outputDir)
-            xml1.should.be.equal('some-file-0-0.xml')
-            xml2.should.be.equal('some-file-0-1.xml')
+            [ xml1, xml2, xml3 ] = fs.readdirSync(outputDir)
+            xml1.should.be.equal('all.xml')
+            xml2.should.be.equal('some-file-0-0.xml')
+            xml3.should.be.equal('some-file-0-1.xml')
         })
     })
 

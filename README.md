@@ -60,15 +60,23 @@ Type: `String`<br>
 Required
 
 ### outputFileFormat
-Define the format of your xml files using an `opts` parameter that contains the runner id as well
-as the capabilities of the runner.
+Define the xml files created after the test execution. 
+You can choose to have **one file** (*single*) containing all the test suites, **many files** (*multi*) or **both**. Default is *multi*.
+- *multi*: set a function to format of your xml files using an `opts` parameter that contains the runner id as well
+as the capabilities of the runner.  
+- *single*: set a function to format you xml file using a `config` parameter that represents the reporter configuration
 
-Type: `Function`<br>
-Default:
+Type: `Object`<br>
+Default: ``{multi: function(opts){return `WDIO.xunit.${opts.capabilities}.${opts.cid}.xml`}}``
 
-```js
-outputFileFormat: function(opts) { // optional
-    return `WDIO.xunit.${opts.capabilities}.${cid}.xml`
+```
+outputFileFormat: {
+    single: function (config) {
+        return 'mycustomfilename.xml';
+    },
+    multi: function (opts) {
+        return `WDIO.xunit.${opts.capabilities}.${opts.cid}.xml`
+    }
 }
 ```
 
