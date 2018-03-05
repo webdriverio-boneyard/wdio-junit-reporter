@@ -101,12 +101,10 @@ with new line
         })
     })
 
-    describe('outputFileFormat', () => {
+    describe('outputFileFormat as function', () => {
         let xml1 = null
         let xml2 = null
-        let xml3 = null
 
-        // fn format
         before(() => {
             reporter = new JunitReporter(baseReporter, {}, {
                 outputDir,
@@ -121,11 +119,16 @@ with new line
 
         it('should have used expected file name format', () => {
             [ xml1, xml2 ] = fs.readdirSync(outputDir)
-            xml2.should.be.equal('some-file-0-0.xml')
-            xml3.should.be.equal('some-file-0-1.xml')
+            xml1.should.be.equal('some-file-0-0.xml')
+            xml2.should.be.equal('some-file-0-1.xml')
         })
+    })
 
-        // single/multi format
+    describe('outputFileFormat as single+multi', () => {
+        let xml1 = null
+        let xml2 = null
+        let xml3 = null
+
         before(() => {
             reporter = new JunitReporter(baseReporter, {}, {
                 outputDir,
