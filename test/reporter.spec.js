@@ -106,6 +106,26 @@ with new line
         let xml2 = null
         let xml3 = null
 
+        // fn format
+        before(() => {
+            reporter = new JunitReporter(baseReporter, {}, {
+                outputDir,
+                outputFileFormat: (opts) => `some-file-${opts.cid}.xml`
+            })
+            reporter.onEnd()
+        })
+
+        after(() => {
+            rimraf.sync(outputDir)
+        })
+
+        it('should have used expected file name format', () => {
+            [ xml1, xml2 ] = fs.readdirSync(outputDir)
+            xml2.should.be.equal('some-file-0-0.xml')
+            xml3.should.be.equal('some-file-0-1.xml')
+        })
+
+        // single/multi format
         before(() => {
             reporter = new JunitReporter(baseReporter, {}, {
                 outputDir,
