@@ -9,8 +9,8 @@
           "files": ["/path/to/file.spec.js"],
           "suites": {
             "some foobar test1": {
-              "uid": "some foobar test1",
-              "title": "some foobar test",
+              "uid": "some Foobar test1",
+              "title": "some Foobar test",
               "duration": 1000,
               "start": 500,
               "tests": {
