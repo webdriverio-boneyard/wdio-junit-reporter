@@ -42,6 +42,7 @@
   "homepage": "https://github.com/webdriverio/wdio-junit-reporter#readme",
   "dependencies": {
     "junit-report-builder": "~1.3.0",
+    "lodash.get": "^4.4.2",
     "mkdirp": "~0.5.1"
   },
   "devDependencies": {
