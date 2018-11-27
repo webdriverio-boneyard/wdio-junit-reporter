@@ -1,7 +1,7 @@
 WDIO JUnit Reporter
 ===================
 
-[![Build Status](https://travis-ci.org/webdriverio/wdio-junit-reporter.svg?branch=master)](https://travis-ci.org/webdriverio/wdio-junit-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/coverage) [![dependencies Status](https://david-dm.org/webdriverio/wdio-junit-reporter/status.svg)](https://david-dm.org/webdriverio/wdio-junit-reporter)
+[![Build Status](https://travis-ci.org/webdriverio-boneyard/wdio-junit-reporter.svg?branch=master)](https://travis-ci.org/webdriverio-boneyard/wdio-junit-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/wdio-junit-reporter/coverage) [![dependencies Status](https://david-dm.org/webdriverio/wdio-junit-reporter/status.svg)](https://david-dm.org/webdriverio/wdio-junit-reporter)
 
 ***
 
@@ -32,7 +32,7 @@ Instructions on how to install `WebdriverIO` can be found [here](http://webdrive
 ## Configuration
 
 Following code shows the default wdio test runner configuration. Just add `'junit'` as reporter
-to the array. To get some output during the test you can run the [WDIO Dot Reporter](https://github.com/webdriverio/wdio-dot-reporter) and the WDIO JUnit Reporter at the same time:
+to the array. To get some output during the test you can run the [WDIO Dot Reporter](https://github.com/webdriverio-boneyard/wdio-dot-reporter) and the WDIO JUnit Reporter at the same time:
 
 ```js
 // wdio.conf.js
